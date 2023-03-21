@@ -8,9 +8,19 @@
 @{
     var prevDisabled = !Model.OrderPaginatedList.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.OrderPaginatedList.HasNextPage ? "disabled" : "";
+}@{
+    int idModal = 0;
 }
+@Html.Hidden("myVar", 4)
 <h1>Index</h1>
-
+<script type="text/javascript">
+    function setMyValue(value) {
+        $('#myVar').val(value);
+    }
+    function changeID(value) {
+        document.getElementById("myIdOrder").value = value;
+    }
+</script>
 @*<p>
     <a asp-page="Create">Create New</a>
 </p>*@
@@ -25,7 +35,7 @@
 <table class="table">
     <thead>
         <tr>
-             
+
             <th>
                 @Html.DisplayNameFor(model => model.Order[0].CreatedDate)
             </th>
@@ -42,11 +52,11 @@
         </tr>
     </thead>
     <tbody>
-         
+
         @foreach (var item in Model.OrderPaginatedList)
         {
             <tr>
-                 
+
                 <td>
                     @Html.DisplayFor(modelItem => item.CreatedDate)
                 </td>
@@ -60,37 +70,43 @@
                     @Html.DisplayFor(modelItem => item.Customer.Username)
                 </td>
                 <td>
-                    <button class="btn btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Edit</button>
+                    <button onclick="changeID(@item.OrderId)"
+                        class="btn btn btn-outline-warning"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModalCenter">
+                        Edit status
+                    </button>
                     <a class="btn btn-outline-info" asp-page="./Details" asp-route-id="@item.OrderId">Details</a>
                     @*<a asp-page="./Delete" asp-route-id="@item.OrderId">Delete</a>*@
                 </td>
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Status</h5>
-                                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form method="post" asp-page="/FlowerShop/OrderPage/Edit">
+            </tr>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Edit Status</h5>
+                            <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" asp-page="/FlowerShop/OrderPage/Edit">
 
-                                    <div class="d-flex justify-content-between">
-                                        @foreach (string status in ViewBag.statusList)
-                                        {
-                                            <input type="text" name="orderId" value="@item.OrderId" hidden />
-                                            <input style="min-width: 100px" type="submit" class="btn btn-outline-success" value="@status" name="newOrderStatus" />
-                                        }
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                @*<button type="button" class="btn btn-primary">Save changes</button>*@
-                            </div>
+                                <div class="d-flex justify-content-between">
+                                    <input type="text" name="orderId" value="" id="myIdOrder" hidden/>
+                                    @foreach (string status in ViewBag.statusList)
+                                    {
+                                        <input style="min-width: 100px" type="submit" class="btn btn-outline-success" value="@status" name="newOrderStatus" />
+                                    }
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            @*<button type="button" class="btn btn-primary">Save changes</button>*@
                         </div>
                     </div>
                 </div>
-            </tr>
+            </div>
         }
     </tbody>
 </table>

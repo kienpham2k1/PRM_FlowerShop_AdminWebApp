@@ -14,6 +14,7 @@ namespace DataAccess.Models
         }
 
         public int OrderId { get; set; }
+        public string OrderCode { get; set; }  
         public int? CustomerId { get; set; }
         public DateTime? CreatedDate { get; set; }
         public double? Total { get; set; }

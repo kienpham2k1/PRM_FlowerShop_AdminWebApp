@@ -82,11 +82,11 @@
                             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(@item.FlowerImage);
                             request.Method = "HEAD";
                             request.GetResponse();
-                            <img style="height: 100px;width: 150px" src="@item.FlowerImage" alt="@item.FowerName">
+                            <img class="img-thumbnail" style="height:200px" src="@item.FlowerImage" alt="@item.FowerName">
                         }
                         catch
                         {
-                            <img style="height: 100px;width: 150px" src="https://www.csusb.edu/sites/default/files/no-picture-available-icon-1.jpg" alt="Image not available">
+                            <img class="img-thumbnail" style="height:200px" src="https://www.csusb.edu/sites/default/files/no-picture-available-icon-1.jpg" alt="Image not available">
                         }
                     }
                 </td>

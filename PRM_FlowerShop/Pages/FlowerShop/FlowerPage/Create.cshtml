@@ -5,7 +5,18 @@
     ViewData["Title"] = "Create";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
+<script type="text/javascript">
 
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+</script>
 <h1>Create</h1>
 
 <h4>Flower</h4>
@@ -22,10 +33,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="Flower.FlowerImage" class="control-label"></label>
-                <input type="file" formenctype="multipart/form-data"
-                       asp-for="FormFile"
-                       class="form-control"
-                       accept="image/png, image/jpeg">
+                @*<input type="file" formenctype="multipart/form-data"
+                asp-for="FormFile"
+                accept="image/png, image/jpeg" />*@
+                <div>
+
+                    <img id="uploadPreview" class="img-thumbnail" style="height:200px; width:200px" />
+                    <input id="uploadImage" formenctype="multipart/form-data"
+                           type="file"
+                           asp-for="FormFile"
+                           accept="image/png, image/jpeg"
+                           onchange="PreviewImage();" />
+                </div>
+
                 <span asp-validation-for="Flower.FlowerImage" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -28,7 +28,7 @@ namespace PRM_FlowerShop.Pages.FlowerShop.FlowerPage
         }
 
         [BindProperty]
-        public Flower Flower { get; set; } = default!; 
+        public Flower Flower { get; set; } = default!;
         [BindProperty]
         public IFormFile FormFile { get; set; }
 
@@ -40,7 +40,7 @@ namespace PRM_FlowerShop.Pages.FlowerShop.FlowerPage
                 return NotFound();
             }
 
-            var flower =  await _context.Flowers.FirstOrDefaultAsync(m => m.FlowerId == id);
+            var flower = await _context.Flowers.FirstOrDefaultAsync(m => m.FlowerId == id);
             if (flower == null)
             {
                 return NotFound();
@@ -59,17 +59,18 @@ namespace PRM_FlowerShop.Pages.FlowerShop.FlowerPage
                 return Page();
             }
             FileStream stream;
-            var folderPath = Path.Combine(_env.ContentRootPath, @"wwwroot\images");
 
-            _fileUploadFileService.DeleteFolder(folderPath);
             if (FormFile != null)
             {
                 string path = await _fileUploadFileService.UploadFile(FormFile);
                 stream = new FileStream(Path.Combine(path), FileMode.Open);
                 string link = await Task.Run(() => _fireBaseStorage.Upload(stream, FormFile.FileName));
                 Flower.FlowerImage = link;
+
                 stream.Close();
             }
+            var folderPath = Path.Combine(_env.ContentRootPath, @"wwwroot\images");
+            _fileUploadFileService.DeleteFolder(folderPath);
             _context.Attach(Flower).State = EntityState.Modified;
 
             try
@@ -93,7 +94,7 @@ namespace PRM_FlowerShop.Pages.FlowerShop.FlowerPage
 
         private bool FlowerExists(int id)
         {
-          return (_context.Flowers?.Any(e => e.FlowerId == id)).GetValueOrDefault();
+            return (_context.Flowers?.Any(e => e.FlowerId == id)).GetValueOrDefault();
         }
     }
 }

@@ -74,6 +74,10 @@ namespace DataAccess.Models
                 entity.Property(e => e.CustomerId).HasColumnName("customerID");
 
                 entity.Property(e => e.Status).HasColumnName("status");
+                entity.Property(e => e.OrderCode)
+                    //.IsRequired()
+                    .HasMaxLength(250)
+                    .HasColumnName("orderCode");
 
                 entity.Property(e => e.Total).HasColumnName("total");
 

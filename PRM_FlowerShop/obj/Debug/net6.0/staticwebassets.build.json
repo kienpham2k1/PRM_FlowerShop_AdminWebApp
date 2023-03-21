@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Tvi82tndSpsd1OCdvQYALn4ixhRvlT3Sh8/fbjBE9Y0=",
+  "Hash": "mmygqrxZwhc1v01+TxhibGeycfgWbLbLf2KoJWzyepk=",
   "Source": "PRM_FlowerShop",
   "BasePath": "_content/PRM_FlowerShop",
   "Mode": "Default",
@@ -83,23 +83,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\images\\facebook.png",
-      "SourceId": "PRM_FlowerShop",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\",
-      "BasePath": "_content/PRM_FlowerShop",
-      "RelativePath": "images/facebook.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\facebook.png"
     },
     {
       "Identity": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\js\\site.js",

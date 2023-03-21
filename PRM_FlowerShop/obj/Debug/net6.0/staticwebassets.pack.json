@@ -13,10 +13,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\images\\facebook.png",
-      "PackagePath": "staticwebassets\\images\\facebook.png"
-    },
-    {
       "Id": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

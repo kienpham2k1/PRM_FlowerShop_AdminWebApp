@@ -46,17 +46,18 @@ namespace PRM_FlowerShop.Pages.FlowerShop.FlowerPage
             }
 
             FileStream stream;
-            var folderPath = Path.Combine(_env.ContentRootPath, @"wwwroot\images");
 
-            _fileUploadFileService.DeleteFolder(folderPath);
             if (FormFile != null)
             {
                 string path = await _fileUploadFileService.UploadFile(FormFile);
                 stream = new FileStream(Path.Combine(path), FileMode.Open);
                 string link = await Task.Run(() => _fireBaseStorage.Upload(stream, FormFile.FileName));
                 Flower.FlowerImage = link;
+
                 stream.Close();
             }
+            var folderPath = Path.Combine(_env.ContentRootPath, @"wwwroot\images");
+            _fileUploadFileService.DeleteFolder(folderPath);
             _context.Flowers.Add(Flower);
             await _context.SaveChangesAsync();
 

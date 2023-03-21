@@ -31,11 +31,11 @@
                     HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(@Model.Flower.FlowerImage);
                     request.Method = "HEAD";
                     request.GetResponse();
-                    <img style="height: 100px;width: 150px" src="@Model.Flower.FlowerImage" alt="@Model.Flower.FowerName">
+                    <img class="img-thumbnail" style="height:200px" src="@Model.Flower.FlowerImage" alt="@Model.Flower.FowerName">
                 }
                 catch
                 {
-                    <img style="height: 100px;width: 150px" src="https://www.csusb.edu/sites/default/files/no-picture-available-icon-1.jpg" alt="Image not available">
+                    <img class="img-thumbnail" style="height:200px" src="https://www.csusb.edu/sites/default/files/no-picture-available-icon-1.jpg" alt="Image not available">
                 }
             }
         </dd>

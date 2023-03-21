@@ -11,15 +11,12 @@ namespace BusinessObject
 {
     public class FireBaseStorage : IFireBaseStorage
     {
-        private static string ApiKey = "AIzaSyDMPGlEuCrTZVTf6X5q46k9qX93OqpzY_c";
-        private static string Bucket = "flower-shop-dfa19.appspot.com";
-        //private static string AuthEmail = "kien@gmail.com";
-        //private static string AuthPassword = "1234567890";
+        private static string ApiKey = "AIzaSyD4xA9DbaOg7fjmwYj5nfd5ZUXavL41h4g";
+        private static string Bucket = "flowershop-2e9af.appspot.com";
         public async Task<string> Upload(FileStream stream, string fileName)
         {
 
             string link = "";
-            //var stream = new MemoryStream(Encoding.ASCII.GetBytes("Hello world!"));
             var auth = new FirebaseAuthProvider(new FirebaseConfig(ApiKey));
             var a = await auth.SignInAnonymouslyAsync();
 
@@ -30,9 +27,9 @@ namespace BusinessObject
                 new FirebaseStorageOptions
                 {
                     AuthTokenAsyncFactory = () => Task.FromResult(a.FirebaseToken),
-                    ThrowOnCancel = true // when you cancel the upload, exception is thrown. By default no exception is thrown
+                    ThrowOnCancel = true
                 })
-                .Child("images")
+                .Child("product")
                 .Child(fileName)
                 .PutAsync(stream, cancellation.Token);
 

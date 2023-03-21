@@ -13,20 +13,8 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\images\\Health-Bar.png",
-      "PackagePath": "staticwebassets\\images\\Health-Bar.png"
-    },
-    {
-      "Id": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\images\\death.png",
-      "PackagePath": "staticwebassets\\images\\death.png"
-    },
-    {
       "Id": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\images\\emote-BORF.png",
       "PackagePath": "staticwebassets\\images\\emote-BORF.png"
-    },
-    {
-      "Id": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\images\\images.jpg",
-      "PackagePath": "staticwebassets\\images\\images.jpg"
     },
     {
       "Id": "E:\\Fpt\\PRN221\\PRN221_TrialTest\\PRM_FlowerShop\\PRM_FlowerShop\\wwwroot\\js\\site.js",

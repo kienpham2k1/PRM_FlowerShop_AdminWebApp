@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\NoImageAvailable.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessObject\BusinessObject.csproj" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\FlowerShop\UserPage\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\NoImageAvailable.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.net" Version="3.2.0" />
+    <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+
+</Project>

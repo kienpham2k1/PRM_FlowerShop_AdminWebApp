@@ -1,0 +1,178 @@
+﻿@page
+@using System.Net;
+@model PRM_FlowerShop.Pages.FlowerShop.OrderPage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@{
+    var prevDisabled = !Model.OrderDetailPaginatedList.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.OrderDetailPaginatedList.HasNextPage ? "disabled" : "";
+}
+<h1>Details</h1>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.CreatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.CreatedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Total)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Customer.Username)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Customer.Username)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Customer.UserAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Customer.UserAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Customer.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Customer.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Order.Total)$
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Order.Status)
+        </dt>
+        <dd class="col-sm-2">
+            @ViewBag.statusList[Model.Order.Status.Value]
+        </dd>
+        <dd class="col-sm-5">
+            <button class="btn btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Edit</button>
+        </dd>
+    </dl>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Status</h5>
+                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-page="/FlowerShop/OrderPage/Edit">
+
+                    <div class="d-flex justify-content-between">
+                        @foreach (string status in ViewBag.StatusList)
+                        {
+                            <input type="text" name="orderId" value="@Model.Order.OrderId" hidden />
+                            <input style="min-width: 100px" type="submit" class="btn btn-outline-success" value="@status" name="newOrderStatus" />
+                        }
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                @*<button type="button" class="btn btn-primary">Save changes</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    @*<a asp-page="./Edit" asp-route-id="@Model.Order?.OrderId">Edit</a> |*@
+    <a class="btn btn-warning" asp-page="./Index">Back to List</a>
+</div>
+<div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderDetail[0].Flower.FowerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderDetail[0].Flower.FlowerImage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderDetail[0].Flower.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderDetail[0].Quantity)
+                </th>
+                <th>
+                    Total
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderDetailPaginatedList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flower.FowerName)
+                    </td>
+                    <td>
+                        @if (item.Flower.FlowerImage != null)
+                        {
+                            try
+                            {
+                                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(@item.Flower.FlowerImage);
+                                request.Method = "HEAD";
+                                request.GetResponse();
+                                <img style="height: 100px;width: 150px" src="@item.Flower.FlowerImage" alt="@item.Flower.FowerName">
+                            }
+                            catch
+                            {
+                                <img style="height: 100px;width: 150px" src="https://www.csusb.edu/sites/default/files/no-picture-available-icon-1.jpg" alt="Image not available">
+                            }
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Flower.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @(item.Quantity * item.Flower.Price)$
+                    </td>
+                    <td>
+                        @*<a asp-page="./Edit" asp-route-id="@item.OrderDetailId">Edit</a> |*@
+                        <a class="btn btn-info" asp-page="/FlowerShop/OrderDetailPage/Details" asp-route-id="@item.OrderDetailId">Details</a>
+                        @* | <a asp-page="./Delete" asp-route-id="@item.OrderDetailId">Delete</a>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-page="/FlowerShop/OrderPage/Details" asp-route-id="@Model.Order.OrderId"
+       asp-route-pageIndex="@(Model.OrderDetailPaginatedList.PageIndex - 1)"
+       class="btn btn-primary @prevDisabled">
+        Previous
+    </a>
+    <a asp-page="/FlowerShop/OrderPage/Details" asp-route-id="@Model.Order.OrderId"
+       asp-route-pageIndex="@(Model.OrderDetailPaginatedList.PageIndex + 1)"
+       class="btn btn-primary @nextDisabled">
+        Next
+    </a>
+</div>

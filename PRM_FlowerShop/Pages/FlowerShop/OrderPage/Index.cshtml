@@ -1,0 +1,106 @@
+﻿@page
+@model PRM_FlowerShop.Pages.FlowerShop.OrderPage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@{
+    var prevDisabled = !Model.OrderPaginatedList.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.OrderPaginatedList.HasNextPage ? "disabled" : "";
+}
+<h1>Index</h1>
+
+@*<p>
+    <a asp-page="Create">Create New</a>
+</p>*@
+<div class="row">
+    <div class="col-md-4">
+        <form class="input-group" method="get">
+            <input type="search" name="search_name" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-outline-primary">search</button>
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+             
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Customer.Username)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+         
+        @foreach (var item in Model.OrderPaginatedList)
+        {
+            <tr>
+                 
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @ViewBag.statusList[item.Status.Value]
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Username)
+                </td>
+                <td>
+                    <button class="btn btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Edit</button>
+                    <a class="btn btn-outline-info" asp-page="./Details" asp-route-id="@item.OrderId">Details</a>
+                    @*<a asp-page="./Delete" asp-route-id="@item.OrderId">Delete</a>*@
+                </td>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Status</h5>
+                                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" asp-page="/FlowerShop/OrderPage/Edit">
+
+                                    <div class="d-flex justify-content-between">
+                                        @foreach (string status in ViewBag.statusList)
+                                        {
+                                            <input type="text" name="orderId" value="@item.OrderId" hidden />
+                                            <input style="min-width: 100px" type="submit" class="btn btn-outline-success" value="@status" name="newOrderStatus" />
+                                        }
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                @*<button type="button" class="btn btn-primary">Save changes</button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-page="/FlowerShop/OrderPage/Index"
+   asp-route-pageIndex="@(Model.OrderPaginatedList.PageIndex - 1)"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="/FlowerShop/OrderPage/Index"
+   asp-route-pageIndex="@(Model.OrderPaginatedList.PageIndex + 1)"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>

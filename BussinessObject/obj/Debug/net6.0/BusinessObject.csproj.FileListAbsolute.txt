@@ -1,0 +1,15 @@
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\bin\Debug\net6.0\BusinessObject.deps.json
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\bin\Debug\net6.0\BusinessObject.dll
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\bin\Debug\net6.0\BusinessObject.pdb
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\bin\Debug\net6.0\DataAccess.dll
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\bin\Debug\net6.0\DataAccess.pdb
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\BusinessObject.csproj.AssemblyReference.cache
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfoInputs.cache
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfo.cs
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\BusinessObject.csproj.CoreCompileInputs.cache
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\BusinessObject.csproj.CopyComplete
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\BusinessObject.dll
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\BusinessObject.pdb
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\BussinessObject\obj\Debug\net6.0\ref\BusinessObject.dll

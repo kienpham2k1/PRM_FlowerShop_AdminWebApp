@@ -1,0 +1,14 @@
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\bin\Debug\net6.0\DataAccess.dll
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\DataAccess.dll
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll

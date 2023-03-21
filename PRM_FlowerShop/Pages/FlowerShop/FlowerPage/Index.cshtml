@@ -1,0 +1,120 @@
+﻿@page
+@using System.Net;
+@model PRM_FlowerShop.Pages.FlowerShop.FlowerPage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@{
+    var prevDisabled = !Model.FlowerPaginatedList.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.FlowerPaginatedList.HasNextPage ? "disabled" : "";
+}
+@section Scripts
+    {
+    <script type="text/javascript" language="javascript">
+        function checkImage(url) {
+            var request = new XMLHttpRequest();
+            request.open("GET", url, true);
+            request.send();
+            request.onload = function () {
+                status = request.status;
+                if (request.status == 200) //if(statusText == OK)
+                {
+                    console.log("image exists");
+                    return true;
+                } else {
+                    console.log("image doesn't exist");
+                    return false;
+                }
+            }
+        }
+        function Alert() {
+            Alert("Hello");
+        }
+    </script>
+}
+<h1>Index</h1>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <form  class="input-group" method="get">
+            <input type="search" name="search_name" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-outline-primary">search</button>
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Flower[0].FowerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flower[0].FlowerImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flower[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flower[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flower[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.FlowerPaginatedList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FowerName)
+                </td>
+                <td>
+                    @if (item.FlowerImage != null)
+                    {
+                        try
+                        {
+                            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(@item.FlowerImage);
+                            request.Method = "HEAD";
+                            request.GetResponse();
+                            <img style="height: 100px;width: 150px" src="@item.FlowerImage" alt="@item.FowerName">
+                        }
+                        catch
+                        {
+                            <img style="height: 100px;width: 150px" src="https://www.csusb.edu/sites/default/files/no-picture-available-icon-1.jpg" alt="Image not available">
+                        }
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.FlowerId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.FlowerId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.FlowerId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-page="/FlowerShop/FlowerPage/Index"
+   asp-route-pageIndex="@(Model.FlowerPaginatedList.PageIndex - 1)"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="/FlowerShop/FlowerPage/Index"
+   asp-route-pageIndex="@(Model.FlowerPaginatedList.PageIndex + 1)"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>

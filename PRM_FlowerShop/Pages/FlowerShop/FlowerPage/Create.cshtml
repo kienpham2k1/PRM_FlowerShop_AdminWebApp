@@ -1,0 +1,61 @@
+﻿@page
+@model PRM_FlowerShop.Pages.FlowerShop.FlowerPage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Flower</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Flower.FowerName" class="control-label"></label>
+                <input asp-for="Flower.FowerName" class="form-control" />
+                <span asp-validation-for="Flower.FowerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flower.FlowerImage" class="control-label"></label>
+                <input type="file" formenctype="multipart/form-data"
+                       asp-for="FormFile"
+                       class="form-control"
+                       accept="image/png, image/jpeg">
+                <span asp-validation-for="Flower.FlowerImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flower.Price" class="control-label"></label>
+                <input asp-for="Flower.Price" class="form-control" />
+                <span asp-validation-for="Flower.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flower.Quantity" class="control-label"></label>
+                <input asp-for="Flower.Quantity" class="form-control" />
+                <span asp-validation-for="Flower.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flower.Description" class="control-label"></label>
+                <input asp-for="Flower.Description" class="form-control" />
+                <span asp-validation-for="Flower.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

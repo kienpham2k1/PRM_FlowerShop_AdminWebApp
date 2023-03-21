@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PRM_FlowerShop
+build_property.RootNamespace = PRM_FlowerShop
+build_property.ProjectDir = E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\PRM_FlowerShop\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\Fpt\PRN221\PRN221_TrialTest\PRM_FlowerShop\PRM_FlowerShop
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/FlowerPage/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxGbG93ZXJQYWdlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/FlowerPage/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxGbG93ZXJQYWdlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/FlowerPage/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxGbG93ZXJQYWdlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/FlowerPage/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxGbG93ZXJQYWdlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/FlowerPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxGbG93ZXJQYWdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/OrderDetailPage/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxPcmRlckRldGFpbFBhZ2VcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/OrderPage/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxPcmRlclBhZ2VcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/OrderPage/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxPcmRlclBhZ2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/FlowerShop/OrderPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmxvd2VyU2hvcFxPcmRlclBhZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Fpt/PRN221/PRN221_TrialTest/PRM_FlowerShop/PRM_FlowerShop/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-d41ysm27ip

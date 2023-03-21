@@ -1,0 +1,68 @@
+﻿@page
+@using System.Net;
+@model PRM_FlowerShop.Pages.FlowerShop.FlowerPage.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Flower</h4>
+    <hr />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Flower.FowerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Flower.FowerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Flower.FlowerImage)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Flower.FlowerImage != null)
+            {
+                try
+                {
+                    HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(@Model.Flower.FlowerImage);
+                    request.Method = "HEAD";
+                    request.GetResponse();
+                            <img style="height: 100px;width: 150px" src="@Model.Flower.FlowerImage" alt="@Model.Flower.FowerName">
+                }
+                catch
+                {
+                            <img style="height: 100px;width: 150px" src="https://www.csusb.edu/sites/default/files/no-picture-available-icon-1.jpg" alt="Image not available">
+                }
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Flower.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Flower.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Flower.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Flower.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Flower.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Flower.Description)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Flower.FlowerId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

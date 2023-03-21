@@ -1,0 +1,73 @@
+﻿@page
+@using System.Net;
+@model PRM_FlowerShop.Pages.FlowerShop.OrderDetailPage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+@{
+    var total = Model.OrderDetail.Quantity * Model.OrderDetail.Flower.Price;
+
+}
+<h1>Details</h1>
+
+<div>
+    <h4>OrderDetail</h4>
+    <hr />
+    <dl class="row">
+       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDetail.Flower.FowerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderDetail.Flower.FowerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDetail.Flower.FlowerImage)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.OrderDetail.Flower.FlowerImage != null)
+            {
+                try
+                {
+                    HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(@Model.OrderDetail.Flower.FlowerImage);
+                    request.Method = "HEAD";
+                    request.GetResponse();
+                    <img style="height: 100px;width: 150px" src="@Model.OrderDetail.Flower.FlowerImage" alt="@Model.OrderDetail.Flower.FowerName">
+                }
+                catch
+                {
+                    <img style="height: 100px;width: 150px" src="https://www.csusb.edu/sites/default/files/no-picture-available-icon-1.jpg" alt="Image not available">
+                }
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDetail.Flower.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderDetail.Flower.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDetail.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderDetail.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDetail.Flower.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderDetail.Flower.Price)
+        </dd>
+        <dt class="col-sm-2">
+           Total
+        </dt>
+        <dd class="col-sm-10">
+            @total
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="/FlowerShop/OrderPage/Details" asp-route-id="@Model.OrderDetail?.OrderId">Back</a>
+</div>
